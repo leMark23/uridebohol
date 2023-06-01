@@ -1,0 +1,509 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+    font-family: 'Montserrat';
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #777;
+    font-family: 'Montserrat';
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.navbar.scrolled {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 250px;
+}
+
+.navbar ul li {
+    margin-right: 0px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+}
+
+.navbar ul li a:hover {
+    background-color: #ececec;
+}
+
+.navbar ul li a.active {
+    background-color: #34495E;
+}
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .logo {
+    width: 110px;
+    height: auto;
+    margin-left: 200% ;
+  }
+  
+  .reservation-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-left: 60%;
+    position: absolute;
+  }
+  
+  .reservation-form form {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .reservation-form label {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+
+  }
+  
+  .reservation-form select,
+  .reservation-form input[type="date"],
+  .reservation-form input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .reservation-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reservation-form input[type="submit"]:hover {
+    background-color: #555;
+  }
+  .reservation-form h2{
+    text-align: center;
+    font-size: 17px;
+    padding: 10px 50px;
+    color:#f2f2f2;
+  }  
+.booking-title{
+    background-color: #67809F;;
+}
+.tagline{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    padding: 30px 60px;
+    margin-top: -500px;
+    margin-left: 8%;
+}
+.tagline h1{
+    font-size: 3.5em;
+    color: white;
+    background-color: rgba(72, 70, 69, 0.8);
+    padding: 0.2em 1em;
+    transform: rotate(-5deg);
+}
+.tagline h2{
+    font-size: 3.5em;
+    background-color: rgba(251, 251, 251, 0.8);
+    padding: 0.2em 1em;
+    padding-top: 1  0px;
+}
+.error-message {
+    margin-bottom: 10px;
+  }
+  #error-message{
+    list-style-type: none;
+    color:red;
+  }
+  .error-message .messages {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .error-message .messages li {
+    margin-bottom: 5px;
+  }
+  
+  .error-message .messages li.error {
+    font-weight: bold;
+    color: red;
+  }
+  
+  .top-cars {
+    font-family:Arial, sans-serif;
+    padding: 50px 200px;
+  }
+  
+  .topcars-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .topcars-title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+  }
+  
+  .cars-home {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: 'Montserrat';
+  }
+  .cars-home i{
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  .cars-home div {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cars-home div p {
+    margin-bottom: 10px;
+  }
+  
+  .cars-home div a {
+    display: block;
+  }
+  
+  .cars-home div img {
+    height: 200px;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    padding-bottom: 10px ;
+  }
+  .car-name {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+    text-align: center;
+    text-transform: uppercase; 
+    font-weight: bold;
+  }
+  .home-price{
+    text-align: left;    
+    font-family: 'Montserrat';
+    font-size: 1em;
+    color: white;
+    background-color: #3ECEE8;
+    padding: 0.5em;
+    left: 15px;
+  }
+  .homecar-details{
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.2em;
+    font-family: 'Montserrat';
+}
+.line{
+  padding: 0.5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3 );
+}
+
+.home-details{
+  text-align: center;
+  padding: 100px;
+  background-color: #2092a5;
+  color:#f2f2f2
+}
+.home-details h1{
+  font-size: 1.3em;
+  font-weight: 100;
+}
+.home-details h2{
+  font-size: 2.4em;
+  padding: 5px;
+  color:#202627;
+}
+.home-details h3{
+  padding: 20px 20%;
+  font-size: 1.1em;
+  font-family: 'Montserrat';
+  font-weight: 100;
+  padding-bottom: 0px;
+  
+}
+.loc {
+  padding:100px;
+}
+.footer-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: #2092a5;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+ .short-detail {
+  flex-basis: 30%;
+  padding-left:160px;
+}
+
+.footer-details .contact-footer {
+  flex-basis: 30%;
+  padding:20px;
+  padding-left: 100px;
+}
+
+.footer-details h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.contact-footer h1{
+  flex-basis: 30%;
+  padding-right: 100px;
+  padding-bottom: 20px;
+}
+.footer-details p {
+  margin-bottom: 5px;
+}
+
+.footer-details img {
+  height: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding:20px;
+  padding-bottom: 40px;
+}
+
+.location-footer{
+  flex-basis: 30%;
+  padding-right: 100px;
+  padding-top: 20px;
+}
+
+.location-footer h1{
+  flex-basis: 30%;
+  padding-right: 100px;
+  padding-bottom: 20px;
+}
+.border{
+  border: 1px solid black;
+  margin-top: 60px;
+}
+
+.more-details {
+  text-align: center;
+  padding-top: 7%;
+}
+
+.more-details h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.more-details h2 {
+  font-size: 1.2rem;
+  color: #777;
+  padding: 20px 15%;
+}
+
+.inner-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20%;
+  margin-bottom: 50px;
+}
+
+.inner-section > div {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.inner-section i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.inner-section h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.inner-section p {
+  font-size: 1rem;
+  color: #777;
+}
+/* Add this media query for screens with a maximum width of 990px */
+@media (max-width: 991px) {
+  .navbar ul {
+    margin-right: 0;
+  }
+  
+  .logo {
+    margin-left: 0;
+  }
+  
+  .reservation-form {
+    margin-left: 0;
+    position: absolute;
+    
+  }
+  .tagline {
+    margin-left: 50%;
+    position: absolute;
+    padding-left: 0;
+  }
+  .background-img{
+    position: inherit;
+  }
+}
+
+/* Add this media query for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+  .tagline {
+    margin-top: -250px;
+    margin-left: 10%;
+    position: absolute;
+   }
+  
+  .tagline h1 {
+    font-size: 2.5em;
+    padding: 0.2em 0.5em;
+  }
+  
+  .tagline h2 {
+    font-size: 2em;
+    padding: 0.2em 0.5em;
+  }
+  
+  .reservation-form {
+    max-width: 100%;
+    margin-top: 50px;
+    padding: 10px;
+    margin-left: 5%;
+  }
+  
+  .reservation-form form {
+    display: block;
+  }
+  
+  .reservation-form input[type="submit"] {
+    width: auto;
+  }
+  
+  .top-cars {
+    padding: 20px;
+  }
+  
+  .topcars-title h1 {
+    font-size: 20px;
+  }
+  
+  .cars-home {
+    flex-wrap: wrap;
+  }
+  
+  .cars-home div {
+    flex-basis: 100%;
+  }
+  
+  .home-details {
+    padding: 20px 10px;
+  }
+  
+  .footer-details {
+    flex-wrap: wrap;
+  }
+  
+  .footer-details div {
+    flex-basis: 100%;
+    padding: 10px;
+  }
+  .contact-footer{
+    margin-left: -75px;
+  }
+  .footer-details img {
+    padding: 0;
+    width:100px;
+    height: auto;
+  }
+  
+  .more-details {
+    padding-top: 3%;
+  }
+  
+  .more-details h1 {
+    font-size: 2rem;
+  }
+  
+  .more-details h2 {
+    font-size: 1rem;  
+    padding: 20px;
+  }
+  
+  .inner-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .inner-section > div {
+    padding: 10px;
+  }
+}

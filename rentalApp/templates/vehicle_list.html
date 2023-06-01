@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-bottom: 90px"></div>
+
+<div class="buttons">
+<button id="cars-button"><i class="fa fa-car"></i> Cars </button>
+<button id="motorcycles-button"> <i class="fa fa-motorcycle"></i> Motorcycles </button>
+</div>
+
+<div class="vehicle-title">
+  <h1> OUR CARS </h1>
+</div>
+
+<div class="container-cars">
+  {% for car in cars %} 
+  <div class="car">
+    <img src="{{ car.image.url }}" alt="{{ car.name }}" width="300" height="200">
+    <h2>{{ car.brand }} {{ car.name }}</h2>
+    <p><i class="bi bi-person"></i> {{ car.seats }} seats</p>
+    <p><i class="bi bi-briefcase-fill"></i> {{ car.bag }}</p>
+    <p><i class="bi bi-speedometer"></i> {{ car.mileage }}</p>
+    <p><i class="bi bi-gear"></i> {{ car.transmission }}</p>
+    <p><i class="bi bi-water"></i> {{ car.aircon }}</p>
+    <p>Available: {{ car.counter }} unit/s</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if car.counter == 0 %}
+    <p class="card-text"> Status: Not Available</p>
+    <p class="car-price">₱ {{ car.price }}/DAY <button class="disabled" disabled>Reserve Now</button></p>
+    {% else %}
+    <p class="card-text"> Status: Available</p>
+    <p class="car-price">₱ {{ car.price }}/DAY <a href="{% url 'home' %}">Reserve Now</a></p>
+    {% endif %}
+  </div>
+  {% empty %}
+  <p>No cars available for rent at this time.</p>
+  {% endfor %}
+</div>
+
+<div class="vehicle-title2">
+  <h1> OUR MOTORCYCLES </h1>
+</div>
+
+<div class="container-motorcycle">
+{% for motorcycle in motorcycles %}
+<div class="motorcycle">
+  <img src="{{ motorcycle.image.url }}" alt="{{ motorcycle.name }}" width="300" height="200">
+  <h2>{{ motorcycle.brand }} {{ motorcycle.name }}</h2>
+  <p><i class="bi bi-calendar"></i> {{ motorcycle.model }}</p>
+  <p><i class="bi bi-badge-cc"></i> {{ motorcycle.cc }}</p>
+  <p><i class="bi bi-gear-wide"></i> {{ motorcycle.classtype }}</p>
+  <p>Available: {{ motorcycle.counter }} unit/s</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  {% if motorcycle.counter == 0 %}
+  <p class="card-text"> Status: Not Available</p>
+  <p class="car-price">₱ {{ motorcycle.price }}/DAY <button class="disabled" disabled>Reserve Now</button></p>
+  {% else %}
+  <p class="card-text"> Status: Available</p>
+  <p class="car-price">₱ {{ motorcycle.price }}/DAY <a href="{% url 'home' %}">Reserve Now</a></p>
+  {% endif %}
+</div>
+{% empty %}
+<p>No motorcycles available at this time.</p>
+{% endfor %}
+</div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    // Show cars
+    document.querySelectorAll(".car").forEach(function(car) {
+      car.style.display = "block";
+    });
+    
+    // Hide motorcycles
+    document.querySelectorAll(".motorcycle").forEach(function(motorcycle) {
+      motorcycle.style.display = "none";
+    });
+    
+    // Show car vehicle title
+    document.querySelector(".vehicle-title").style.display = "block";
+    
+    // Hide motorcycle vehicle title
+    document.querySelector(".vehicle-title2").style.display = "none";
+  });
+  
+  document.getElementById("cars-button").addEventListener("click", function() {
+    // Show cars
+    document.querySelectorAll(".car").forEach(function(car) {
+      car.style.display = "block";
+    });
+    
+    // Hide motorcycles
+    document.querySelectorAll(".motorcycle").forEach(function(motorcycle) {
+      motorcycle.style.display = "none";
+    });
+    
+    // Show car vehicle title
+    document.querySelector(".vehicle-title").style.display = "block";
+    
+    // Hide motorcycle vehicle title
+    document.querySelector(".vehicle-title2").style.display = "none";
+  });
+  
+  document.getElementById("motorcycles-button").addEventListener("click", function() {
+    // Show motorcycles
+    document.querySelectorAll(".motorcycle").forEach(function(motorcycle) {
+      motorcycle.style.display = "block";
+    });
+    
+    // Hide cars
+    document.querySelectorAll(".car").forEach(function(car) {
+      car.style.display = "none";
+    });
+    
+    // Hide car vehicle title
+    document.querySelector(".vehicle-title").style.display = "none";
+    
+    // Show motorcycle vehicle title
+    document.querySelector(".vehicle-title2").style.display = "block";
+  });
+</script>
+
+
+
+{% endblock %}

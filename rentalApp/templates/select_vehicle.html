@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+  <div style="margin-bottom: 90px"></div>
+
+  
+  <div class="steps-indicator">
+    <div class="step1" >
+      <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+      <a href="{% url 'home' %}" ><i class="bi bi-pen" style="color: rgb(12, 186, 12);"></i></a>
+      <h1 style="color:  rgb(12, 186, 12);"> REQUEST</h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+    </div>
+    <div class="step2">
+      <i class="bi bi-gear"></i>
+      <h1> TYPE </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle"></i>
+    </div>
+    <div class="step3" style="opacity: 0.5" >
+      <i class="fa fa-car"></i>
+      <h1> VEHICLE </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle"></i>
+    </div>
+    <div class="step4" style="opacity: 0.5">
+      <i class="bi bi-person-lines-fill"></i>
+      <h1> DETAILS </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle"></i>
+    </div>
+    <div class="step5" style="opacity: 0.5">
+      <i class="fa fa-file"></i>
+      <h1> SUMMARY </h1>
+    </div>  
+  </div>
+
+  <div class="title-select2">
+    <h1>Select Vehicle</h1>
+  </div>
+
+
+  <div class="vehicle-options">
+    <a href="{% url 'car_list' %}" class="btn btn-primary" id="car-button"> <i class="fa fa-car"></i></a>
+    <a href="{% url 'motorcycle_list' %}" class="btn btn-primary"> <i class="fa fa-motorcycle"></i></a>
+  </div>
+{% endblock %}

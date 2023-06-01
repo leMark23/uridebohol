@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-bottom: 90px"></div>
+
+<div class="steps-indicator">
+  <div class="step1">
+    <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+    <a href="{% url 'home' %}">
+      <i class="bi bi-pen" style="color: rgb(12, 186, 12);"></i>
+    </a>
+    <h1 style="color: rgb(12, 186, 12);">REQUEST</h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+  </div>
+  <div class="step2">
+    <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+    <a href="{% url 'select_vehicle' %}" ><i class="bi bi-gear" style="color: rgb(12, 186, 12);" ></i></a>
+    <h1 style="color: rgb(12, 186, 12);"> TYPE </h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+  </div>
+    <div class="step3" >
+      <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+      <i class="fa fa-car" style="margin-bottom: 5px; color: rgb(12, 186, 12);"></i>
+      <h1 style="margin-top: 12px; color: rgb(12, 186, 12);" > VEHICLE </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+    </div>
+    <div class="step4">
+      <i class="bi bi-person-lines-fill"></i>
+      <h1> DETAILS </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle"></i>
+    </div>
+    <div class="step5" style="opacity: 0.5">
+      <i class="fa fa-file"  style="margin-bottom: 5px;"></i>
+      <h1 style="margin-top: 12px;"> SUMMARY </h1>
+    </div>  
+  </div>
+  
+
+<div class="client-details">
+    <h1>Client Details</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="car" value="{{ car.id }}">
+        <div class="row">
+            <div class="col">
+              <p>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name">
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name">
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                <label for="contact_no">Contact No:</label>
+                <input type="text" name="contact_no" id="contact_no">
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>
+                <label for="hotel">Hotel:</label>
+                <input type="text" name="hotel" id="hotel">
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message"></textarea>
+              </p>
+            </div>
+          </div>
+        
+        <input type="submit" value="Reserve">
+        <h3>{{ form.errors }}</h3>
+    </form>
+</div>
+
+{% endblock %}

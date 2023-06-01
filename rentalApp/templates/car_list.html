@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div style="margin-bottom: 90px"></div>
+
+<div class="steps-indicator">
+  <div class="step1" >
+    <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+    <a href="{% url 'home' %}" ><i class="bi bi-pen" style="color: rgb(12, 186, 12);"></i></a>
+    <h1 style="color:  rgb(12, 186, 12);"> REQUEST</h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+  </div>
+  <div class="step2">
+    <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+    <a href="{% url 'select_vehicle' %}" ><i class="bi bi-gear" style="color: rgb(12, 186, 12);" ></i></a>
+    <h1 style="color: rgb(12, 186, 12);"> TYPE </h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+  </div>
+  <div class="step3" >
+    <i class="fa fa-car"></i>
+    <h1> VEHICLE </h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle"></i>
+  </div>
+  <div class="step4" style="opacity: 0.5">
+    <i class="bi bi-person-lines-fill"></i>
+    <h1> DETAILS </h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle"></i>
+  </div>
+  <div class="step5" style="opacity: 0.5">
+    <i class="fa fa-file"></i>
+    <h1> SUMMARY </h1>
+  </div>  
+</div>
+
+
+<div class="vehicle-title">
+  <h1> AVAILABLE CARS </h1>
+</div>
+
+<div class="container-cars">
+  {% for car in car_list %}
+  <div class="car">
+    <img src="{{ car.image.url }}" alt="{{ car.name }}" width="300" height="200">
+    <h2>{{ car.brand }} {{ car.name }}</h2>
+    <p><i class="bi bi-person"></i> {{ car.seats }} seats</p>
+    <p><i class="bi bi-briefcase-fill"></i> {{ car.bag }}</p>
+    <p><i class="bi bi-speedometer"></i> {{ car.mileage }}</p>
+    <p><i class="bi bi-gear"></i> {{ car.transmission }}</p>
+    <p><i class="bi bi-water"></i> {{ car.aircon }}</p>
+    <p>Available: {{ car.counter }} unit/s</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if car.counter == 0 %}
+    <p class="card-text"> Status: Not Available</p>
+    <p class="car-price">₱ {{ car.price }}/DAY <button class="disabled" disabled>Reserve Now</button></p>
+    {% else %}
+    <p class="card-text"> Status: Available</p>
+    <p class="car-price">₱ {{ car.price }}/DAY <a href="{% url 'car_client_detail' car_id=car.id %}">Reserve Now</a></p>
+    {% endif %}
+
+  </div>
+  {% empty %}
+  <p>No cars available for rent at this time.</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-bottom: 90px"></div>
+
+<div id="section1"></div>
+
+<div class="reservation-form">
+
+  <form id="reservation-form" class="reservation" method="POST" action="{% url 'reservation_request' %}">
+    {% csrf_token %}
+    <div class="booking-title">
+    <h2> Quick Booking Reservation</h2>
+  </div>
+    <div>
+      <label for="location"></label>
+      <select id="location" name="location" required>
+        <option value="">Select a location</option>
+        <option value="Panglao-Airport">Panglao-Airport</option>
+        <option value="Tagbilaran-Seaport">Tagbilaran-Seaport</option>
+        <option value="Hotel Pick-up">Hotel Pick-up</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="start_date">Pick-up Date</label>
+      <input type="date" id="start_date" placeholder="Pick-up date" name="start_date" min="{{ form.start_date.field.widget.attrs.min }}" required>
+    </div>
+
+    <div>
+      <label for="start_time">Pick-up Time</label>
+      <input type="time" id="start_time" name="start_time" required>
+    </div>
+
+    <div>
+      <label for="end_date">Return Date:</label>
+      <input type="date" id="end_date" name="end_date" min="{{ form.end_date.field.widget.attrs.min }}" required>
+    </div>
+
+    <div>
+      <label for="end_time">Return Time:</label>
+      <input type="time" id="end_time" name="end_time" required>
+    </div>
+
+    <input type="submit" value="Book Now">
+  </form>
+  <div id="error-message" style="color:red">
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+</div>
+
+<div class ="background-img">
+  <img src="static/images/chocoback.png" alt="background" class="background" width="100%" height="650px">
+</div>
+
+<div class="tagline">
+  <h1>Rent a Vehicle in Bohol at</h1>
+  <h2>U-ride Bohol Rental Services</h2>
+</div>
+
+<div class="top-cars">
+  <div class="topcars-title">
+    <h1> OUR TOPSELLER CARS </h1>  
+  </div>
+  <div class="cars-home">
+    <div>
+    <p class="car-name"> Toyota Wigo </p>
+    <p class="home-price">P 1,600/day </p>
+    <a href="#section1"><img src="static/images/wigo.jpg" width="300" height="200"> </a>
+    <p class="homecar-details"><i class="bi bi-person"></i> 5 seats </p>
+    <p class="homecar-details"><i class="bi bi-gear"></i> Manual </p>
+    <p class="homecar-details"><i class="bi bi-water"></i> Airconditioned</p>
+    </div>
+    <div>
+    <p class="car-name"> Toyota VIOS 2022 </p>
+    <p class="home-price">P 1,800/day </p>
+    <a href="#section1"><img src="static/images/vios-2022.jpg" width="300" height="200"> </a>
+    <p class="homecar-details"><i class="bi bi-person"></i> 5 seats</p> 
+    <p class="homecar-details"><i class="bi bi-gear"></i> Manual </p>
+    <p class="homecar-details"><i class="bi bi-water"></i> Airconditioned</p>
+    </div>
+    <div>
+    <p class="car-name"> Toyota Innova </p>
+    <p class="home-price">P 2,800/day </p>
+    <a href="#section1"><img src="static/images/innova.jpg" width="300" height="200"> </a>
+    <p class="homecar-details"><i class="bi bi-person"></i> 8 seats</p> 
+    <p class="homecar-details"><i class="bi bi-gear"></i> Manual </p>
+    <p class="homecar-details"><i class="bi bi-water"></i> Airconditioned</p>
+    </div>
+  </div>
+</div>
+
+<div class="line">
+</div>
+
+<div class="top-cars">
+  <div class="topcars-title">
+    <h1> OUR TOPSELLER MOTORCYCLES </h1>  
+  </div>
+  <div class="cars-home">
+    <div>
+    <p class="car-name"> Honda Click </p>
+    <p class="home-price">P 600/day </p>
+    <a href="#section1"><img src="static/images/click.webp" width="300" height="200"> </a>
+    <p class="homecar-details"><i class="bi bi-calendar"></i> 2022 </p>
+    <p class="homecar-details"><i class="bi bi-gear-wide"></i> Scooter </p>
+    <p class="homecar-details"><i class="bi bi-badge-cc"></i> 125cc </p>
+    </div>
+    <div>
+    <p class="car-name"> Yamaha NMAX </p>
+    <p class="home-price">P 1,000/day </p>
+    <a href="#section1"><img src="static/images/nmax.jpg" width="300" height="200"> </a>
+    <p class="homecar-details"><i class="bi bi-calendar"></i></i> 2022 </p> 
+    <p class="homecar-details"><i class="bi bi-gear-wide"></i> Maxi Scooter </p>
+    <p class="homecar-details"><i class="bi bi-badge-cc"></i> 155cc </p>
+    </div>
+    <div>
+    <p class="car-name"> Kawasaki Ninja </p>
+    <p class="home-price">P 2,000/day </p>
+    <a href="#section1"><img src="static/images/ninja.jpg" width="300" height="200"> </a>
+    <p class="homecar-details"><i class="bi bi-calendar"></i></i> 2021 </p> 
+    <p class="homecar-details"><i class="bi bi-gear-wide"></i> Sports Bike </p>
+    <p class="homecar-details"><i class="bi bi-badge-cc"></i></i> 300cc </p>
+    </div>
+  </div>
+</div>
+
+<div class="line">
+</div>
+
+<div class="home-details">
+  <h1>GREAT RENTAL SELECTION HERE IN BOHOL</h1>
+  <h2>NOT ONLY EXCITING CARS BUT </h2>
+  <h2>ALSO EXCITING PRICES</h2>
+  <h3>At u-ride Bohol, not only do you get a great deal-you get a great vehicle too. 
+    We offers a large selection of high-quality vehicles at great rates, from cars to motorcycles, 
+    scooters to sports bike, hatchbacks to vans, each one non-smoking for your comfort.</h3>
+</div>
+
+<div class="more-details">
+  <h1>RELIABLE VEHICLE RENTAL BOHOL</h1>
+  <h2> We accomodate hotels pick-up whichever Hotel you'd like. Find the cheapest prices online, for your future Car Rental.
+    We have small cars, hatchbacks, vans, scooters, trail bike, and sports bike. Whatever you need we have you covered.</h2>
+  <div class="inner-section">
+    <div>
+      <i class="bi bi-geo-alt-fill"></i>
+      <h1>LOCATION</h1>
+      <p> We are available at Panglao and Tagbilaran</p>
+    </div>
+    <div>
+      <i class="bi bi-building"></i>
+      <h1>HOTEL</h1>
+      <p>We can certainly meet you at any Hotels.</p>
+    </div>
+    <div>
+      <i class="bi bi-person-fill"></i>
+      <h1> SELF DRIVE</h1>
+      <p> Self Drive any vehicle you want.</p>
+    </div>
+    <div>
+      <i class="bi bi-headset"></i>
+      <h1> 24/7 SUPPORT</h1>
+      <p>We are always at your complete disposal</p>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#reservation-form').on('submit', function(event) {
+      event.preventDefault();  // Prevent the default form submission behavior
+
+      $.ajax({
+        url: $(this).attr('action'),
+        type: 'POST',
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function(response) {
+          if (response.success) {
+            window.location.href = "{% url 'select_vehicle' %}";
+          } else {
+            $('#error-message').html('<ul class="errorlist"><li>' + response.message + '</li></ul>');
+          }
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr.responseText);  // Log the detailed error message for debugging purposes
+        }
+      });
+
+      return false;  // Prevent the form from submitting normally
+    });
+  });
+</script>
+
+{% endblock %}
+

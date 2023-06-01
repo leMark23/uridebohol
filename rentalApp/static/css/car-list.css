@@ -1,0 +1,257 @@
+.container-cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 15% 20px 15%;
+    
+  }
+  
+  .car {
+    width: calc(33.33% - 15px);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  .car i{
+    padding-right: 15px;
+    margin-left:5px;
+  }
+  .car img {
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .car h2 {
+    font-size: 18px;    
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+    text-align: center;
+    text-transform: uppercase; 
+  }
+  
+  .car p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    line-height: 1.2em;
+    font-family: 'Montserrat';
+  }
+
+  .car a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 15px;
+  }
+  
+  .car a:hover {
+    background-color: #555;
+  }
+  
+  .car p:first-child {
+    margin-top: 10px;
+  }
+  
+  .car p:last-child {
+    margin-bottom: 10px;
+  }
+  
+  .vehicle-title {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 50px;
+  } 
+  
+  .vehicle-title h1 {
+    font-size: 2.5em;
+    font-family: 'Montserrat';
+
+  }
+  .car-price{
+    padding-left: 10%;
+    font-weight: bold;
+  }
+  
+  /* Additional styling for motorcycles section */
+  .container-motorcycle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 15% 20px 15%;
+    
+  }
+  
+  .motorcycle {
+    width: calc(33.33% - 15px);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  .motorcycle i{
+    padding-right: 15px;
+    margin-left: 5px;
+  }
+
+  .motorcycle img {
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .motorcycle h2 {
+    font-size: 18px;    
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+    text-align: center;
+    text-transform: uppercase; 
+  }
+  
+  .motorcycle p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    line-height: 1.2em;
+    font-family: 'Montserrat';
+  }
+  
+  .motorcycle a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 15px;
+  }
+  
+  .motorcycle a:hover {
+    background-color: #555;
+  }
+  
+  .motorcycle p:first-child {
+    margin-top: 10px;
+  }
+  
+  .motorcycle p:last-child {
+    margin-bottom: 10px;
+  } 
+  .vehicle-title2 {
+    text-align: center;
+    padding-top: 10px;
+  } 
+  
+  .vehicle-title2 h1 {
+    font-size: 2.5em;
+    font-family: 'Montserrat';
+  }
+
+ .motorcycle-price{
+    padding-left: 8%;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 30px;
+  }
+  
+  .buttons button {
+    margin: 0 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    padding:10px 50px;
+    font-size: 1.1em;
+    font-family: 'Montserrat';
+  }
+  
+  .buttons button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  #motorcycles-button{
+    padding:10px 25px;
+  }
+  .title-select2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .title-select2 h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Montserrat';  
+  }
+  
+  .vehicle-options {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20% 200px 20%; 
+  }
+  
+  .vehicle-options a {
+    display: inline-block;
+    padding: 100px;
+    margin: 0 50px;
+    box-shadow: 0 0 5px rgba(90, 90, 90, 0.5);
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .vehicle-options a i {
+    margin-right: 10px;
+    font-size: 60px;
+    color: #333;
+  }
+  
+  .vehicle-options a:hover {
+    box-shadow: 0 0 5px rgba(90, 90, 90, 1);
+  }
+   
+
+  /* Styles for tablets */
+  @media (max-width: 768px) {
+    .container-cars,
+    .container-motorcycle {
+      padding: 20px 5% 20px 5%;
+    }
+  
+    .car,
+    .motorcycle {
+      width: calc(50% - 10px);
+    }
+      .vehicle-options {
+        flex-wrap: wrap;
+        padding: 50px 10% 200px 10%;
+      }
+    
+      .vehicle-options a {
+        margin: 0 0 20px 0;
+      }
+  }
+  @media (max-width: 480px) {
+    .car,
+    .motorcycle {
+      width: 100%;
+    }
+  }
+   .vehicle-options {
+    width: 100%;
+  }

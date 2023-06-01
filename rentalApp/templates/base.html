@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>U-Ride Bohol</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/styles.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/car-list.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/client.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/confirmation.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/about.css" %}'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/tab-icon.png' %}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <script src="{% static 'js/reservation_form.js' %}"></script>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="navbar" class="navbar">
+        <a href="{% url 'home' %}" ><img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"></a>
+        <ul>    
+            <li><a href="{% url 'home' %}"> HOME </a></li>
+            <li><a href="{% url 'vehicle_list' %}"> VEHICLE</a></li>
+            <li><a href="{% url 'about' %}"> ABOUT US</a></li>
+            <li><a href="{% url 'contact' %}"> CONTACT US </a></li>
+        </ul>
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+    <div class="footer-details">
+        <div class="short-detail">
+          <img src="{% static 'images/logo.png' %}">
+          <p>Secure Your vehicle Hire Today. The Best Price Guaranteed. 
+            You're time will be worthwhile here in Bohol.
+          </p>
+        </div>
+        <div class="contact-footer">
+          <h1>CONTACT US</h1>
+          <p><i class="bi bi-telephone-fill"></i> SMART: (+63-907) 469-4252</p>
+          <p>GLOBE:  (+63-977) 469-4252</p>
+          <p><i class="bi bi-envelope-fill"></i> uridebohol@gmail.com</p>
+          <p><i class="bi bi-facebook"></i> U-ride Bohol</p>
+          <div class="border"></div>
+        </div>
+        <div class="location-footer">
+          <h1>ADDRESS</h1>
+          <p><i class="bi bi-house-door-fill"></i> 0169, Catugasan St. Dampas, Tagbilaran City, Bohol, 6300</p>
+          <p><i class="bi bi-alarm-fill"></i> Business Hours:</p>
+          <p> 8:00 AM - 12:00AM Daily</p>
+          <div class="border"></div>
+        </div>
+      </div>
+      
+      
+    <div class="footer">
+        <p>&copy; 2023 Rental Bohol. All rights reserved.</p>
+    </div>
+    
+    <script>
+    </script>
+</body>
+</html>

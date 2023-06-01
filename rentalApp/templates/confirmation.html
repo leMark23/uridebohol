@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div style="margin-bottom: 90px"></div>
+
+<div class="steps-indicator">
+  <div class="step1">
+    <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+      <i class="bi bi-pen" style="color: rgb(12, 186, 12);"></i>
+    <h1 style="color: rgb(12, 186, 12);">REQUEST</h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+  </div>
+  <div class="step2">
+    <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+    <a href="{% url 'select_vehicle' %}" ><i class="bi bi-gear" style="color: rgb(12, 186, 12);" ></i></a>
+    <h1 style="color: rgb(12, 186, 12);"> TYPE </h1>
+  </div>
+  <div class="arrow">
+    <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+  </div>
+    <div class="step3" >
+      <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+      <i class="fa fa-car" style="margin-bottom: 5px; color: rgb(12, 186, 12);"></i>
+      <h1 style="margin-top: 12px; color: rgb(12, 186, 12);" > VEHICLE </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+    </div>
+    <div class="step4">
+      <span class="checkmark" style="color: rgb(12, 186, 12);">&#10003;</span>
+      <i class="bi bi-person-lines-fill" style="color: rgb(12, 186, 12);"></i>
+      <h1 style="color: rgb(12, 186, 12);"> DETAILS </h1>
+    </div>
+    <div class="arrow">
+      <i class="bi bi-arrow-right-circle-fill" style="color: rgb(12, 186, 12);"></i>
+    </div>
+    <div class="step5">
+      <i class="fa fa-file"  style="margin-bottom: 5px;"></i>  
+      <h1 style="margin-top: 12px;"> SUMMARY </h1>
+    </div>  
+  </div>
+
+
+<div class="confirmation">
+  <div class="summary">
+    <h1>SUMMARY <div class="line2"></div></h1>
+  </div>
+  <div class="conf-message">
+    <p style="font-size: 1em;">Thank you for choosing U-ride Bohol Rental Services. Your reservation is already sent and now pending.
+     Just wait for a confirmation on your email.</p>
+  </div>
+  <div class="conf-reservation">
+    <h2>Reservation Details</h2>
+    <div class="inline-div">
+      <p style="font-weight: bold;">Pick-up </p>
+      <p>{{ reservation.location }}</p>
+      <p style="font-weight: bold;">Pick-up Date </p>
+      <p>{{ reservation.start_date }}</p>
+      <p style="font-weight: bold;">Pick-up Time </p>
+      <p>{{ reservation.start_time }}</p>
+    </div>
+    <div class="inline-div">
+      <p style="font-weight: bold;">Drop Off </p>
+      <p>{{ reservation.location }}</p>
+      <p style="font-weight: bold;">Return Date </p>
+      <p>{{ reservation.end_date }}</p>
+      <p style="font-weight: bold;">Return Time </p>
+      <p>{{ reservation.end_time }}</p>
+    </div>
+  </div>
+  
+  <div class="conf-client-details">
+    <h2>Client Details</h2>
+    <div class="inline-div">
+      <p style="font-weight: bold;">First Name: </p>
+      <p>{{ client.first_name }}</p>
+      <p style="font-weight: bold;">Last Name: </p>
+      <p>{{ client.last_name }}</p>
+      <p style="font-weight: bold;">Hotel: </p>
+      <p>{{ client.hotel }}</p>
+    </div>
+    <div class="inline-div">
+      <p style="font-weight: bold;">Email: </p>
+      <p>{{ client.email }}</p>
+      <p style="font-weight: bold;">Contact No: </p>
+      <p>{{ client.contact_no }}</p>
+      <p style="font-weight: bold;">Message: </p>
+      <p>{{ client.message }}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="conf-vehicle-details">
+    {% if car %}
+    <h2> CAR DETAILS </h2>
+    <img src="{{ car.image.url }}" alt="{{ car.name }}" width="300" height="200">
+    <h2>{{ car.brand }} {{ car.name }}</h2>
+    <p><i class="bi bi-person"></i> {{ car.seats }} seats</p>
+    <p><i class="bi bi-briefcase-fill"></i> {{ car.bag }}</p>
+    <p><i class="bi bi-speedometer"></i> {{ car.mileage }}</p>
+    <p><i class="bi bi-gear"></i> {{ car.transmission }}</p>
+    <p><i class="bi bi-water"></i> {{ car.aircon }}</p>
+    <p>₱ {{ car.price }}</p> 
+    {% endif %}
+  
+    {% if motorcycle %}
+    <h2> Motorcycle Details </h2>
+    <img src="{{ motorcycle.image.url }}" alt="{{ motorcycle.name }}" width="300" height="200">
+    <h2>{{ motorcycle.brand }} {{ motorcycle.name }}</h2>
+    <p><i class="bi bi-calendar"></i> {{ motorcycle.model }}</p>
+    <p><i class="bi bi-badge-cc"></i> {{ motorcycle.cc }} cc</p>
+    <p><i class="bi bi-gear-wide"></i> {{ motorcycle.classtype }}</p>
+    <p style="padding-bottom: 50px;"> ₱ {{ motorcycle.price }} </p>
+    {% endif %}
+    <br>
+  </div>
+  <br>
+  <div class="conf-total">
+    <hr>
+    <h2>Reservation Total</h2>
+    <p><strong> Total Duration </strong></p>
+    <p> {{ total_duration_days }} days </p>
+    <p><strong> Total Amount </strong></p>
+    <p>₱ {{ total_amount }}</p>
+    <p style="font-size: 0.7em;">Note: We only accept COD as payment since online billing has not yet develop because noob programmer. Thank you!</p>
+  </div>
+  <br>
+  <hr>
+  <div class="conf-submit">
+    <a href="{% url 'client_update' client_id=client.id %}">Update Client Details</a>
+    <a href="{% url 'home' %}" class="btn btn-primary">Confirm</a>
+  </div>
+</div>
+{% endblock %}

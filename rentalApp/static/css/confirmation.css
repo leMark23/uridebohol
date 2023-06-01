@@ -1,0 +1,74 @@
+.confirmation {
+  padding: 50px 17%;
+}
+.confirmation h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top:10px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+}
+.confirmation p{
+    padding: 5px;
+    font-family: 'Montserrat';  
+    font-size: 14px;
+}
+.inline-div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 60px;
+  }
+  
+.conf-reservation,
+.conf-client-details {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  padding-bottom: 20px;
+}
+.conf-message{
+    text-align: center;
+    background-color: rgb(158, 239, 158);
+    padding: 10px 0px;
+    font-size: 0.8em;
+    font-weight: 100;
+}
+.conf-vehicle-details {
+  width: 100%;
+}
+.summary h1{
+    font-size: 1.2em;
+    font-family: 'Montserrat'; 
+}
+.line2 {
+    border: 1px solid black;
+}
+.conf-vehicle-details img {
+  float: left;
+  margin-right: 200px;
+}
+.conf-vehicle-details p{
+  padding: 0x 10px;
+}
+.conf-total {
+  clear: both;
+}
+
+.conf-submit {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.conf-submit a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.conf-submit a:hover {
+  background-color: #0056b3;
+}
+
